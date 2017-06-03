@@ -20,14 +20,11 @@ p {
 }
 /* Quiz Classes */
  .quizContainer {
-    background-color: lightgoldenrodyellow;
+    background-color: rgba(169, 197, 242, .5);
     border-radius: 6px;
     width: 75%;
     margin: auto;
     padding-top: 5px;
-    -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
-    box-shadow: 10px 10px 5px #888;
     position: relative;
 }
 .nextButton {
@@ -36,7 +33,7 @@ p {
     width: 150px;
     height: 40px;
     text-align: center;
-    background-color: lightgrey;
+    background-color: #f8f9ac;
     /*clear: both;*/
     color: red;
     font-family:'Rokkitt', serif;
@@ -51,7 +48,7 @@ p {
     height: auto;
     margin: auto;
     border-radius: 6px;
-    background-color: lightgrey;
+    background-color: #f8f9ac;
     text-align: center;
 }
 .quizMessage {

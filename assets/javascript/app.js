@@ -8,12 +8,12 @@ var questions = [{
     choices: ["Mac n' Cheese", "Potato Salad", "The Cheeseburger", "Hot-Dogs"],
     correctAnswer: 2
 }, {
-    question: "What is the busiest train station in the world?",
-    choices: ["Grand Central, NY", "Shibuya, Tokyo", "Beijing Central, Chine", "Gard du Nord, Paris"],
-    correctAnswer: 1
+    question: "What is the Highest Road in North America?",
+    choices: ["The Vail Pass", "Floyd Mt Road", "Boulder Canyon", "Road to Mt. Evans"],
+    correctAnswer: 3
 }, {
-    question: "What is the longest river?",
-    choices: ["Nile", "Amazon", "Mississippi", "Yangtze"],
+    question: "What Holiday does the City of Loveland have to make Special Accomedations for?",
+    choices: ["Valentine's Day", "Thanksgiving", "Father's Day", "Easter"],
     correctAnswer: 0
 }, {
     question: "What is the busiest tube station in the London?",
