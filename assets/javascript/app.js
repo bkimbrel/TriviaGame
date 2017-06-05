@@ -1,14 +1,14 @@
 
 var questions = [{
-    question: "Colorado has Hosted the Olympics.",
-    choices: ["True", "False",],
-    correctAnswer: 1
+    question: "What year did Colorado Host the Olympics?",
+    choices: ["1988", "1976", "1998", "Didn't Host"],
+    correctAnswer: 3
 }, {
     question: "What Classic 'American' food was said to Originate in Colorado?",
     choices: ["Mac n' Cheese", "Potato Salad", "The Cheeseburger", "Hot-Dogs"],
     correctAnswer: 2
 }, {
-    question: "What is the Highest Road in North America?",
+    question: "What is the Highest Elevation Road in North America?",
     choices: ["The Vail Pass", "Floyd Mt Road", "Boulder Canyon", "Road to Mt. Evans"],
     correctAnswer: 3
 }, {
@@ -16,9 +16,9 @@ var questions = [{
     choices: ["Valentine's Day", "Thanksgiving", "Father's Day", "Easter"],
     correctAnswer: 0
 }, {
-    question: "What is the busiest tube station in the London?",
-    choices: ["Waterloo", "Baker Street", "Kings Cross", "Victoria"],
-    correctAnswer: 0
+    question: "What Type of Beverage Business does Colorado have more of Per Capita, than any other state?",
+    choices: ["Coffee Shops", "Microbreweries", "Vodka Distillary", "Pot Shakes"],
+    correctAnswer: 1
 }];
 
 var currentQuestion = 0;
@@ -27,9 +27,19 @@ var quizOver = false;
 
 $(document).ready(function () {
 
+    $('.timer').circularCountDown({
+        duration: {
+        hours: 0,
+        minutes: 0,
+        seconds: 10
+        },
+    });
+    
+
     // Display the first question
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
+
 
     // On clicking next, display the next question
     $(this).find(".nextButton").on("click", function () {
@@ -41,14 +51,14 @@ $(document).ready(function () {
                 $(document).find(".quizMessage").text("Please select an answer");
                 $(document).find(".quizMessage").show();
             } else {
-                // TODO: Remove any message -> not sure if this is efficient to call this each time....
+                
                 $(document).find(".quizMessage").hide();
 
                 if (value == questions[currentQuestion].correctAnswer) {
                     correctAnswers++;
                 }
 
-                currentQuestion++; // Since we have already displayed the first question on DOM ready
+                currentQuestion++; 
                 if (currentQuestion < questions.length) {
                     displayCurrentQuestion();
                 } else {
@@ -60,7 +70,7 @@ $(document).ready(function () {
                     quizOver = true;
                 }
             }
-        } else { // quiz is over and clicked the next button (which now displays 'Play Again?'
+        } else { 
             quizOver = false;
             $(document).find(".nextButton").text("Next Question");
             resetQuiz();
@@ -68,6 +78,24 @@ $(document).ready(function () {
             hideScore();
         }
     });
+
+    // $('#myTimer').polartimer({
+    // timerSeconds: 30
+    // });
+
+    // $('#myTimer').polartimer('start');
+
+    // $('#myTimer').polartimer({
+    // timerSeconds: 30,
+    // color : '#CCC',
+    // opacity : 1
+    // });
+
+    // $('#myTimer').polartimer({
+    // timerSeconds: 30,
+    // callback : function() {}
+    // });
+
 
 });
 

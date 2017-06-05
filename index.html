@@ -4,25 +4,59 @@
 <head>
 	<title>Weird Colorado Trivia Game</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
 	<script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
+  		src="https://code.jquery.com/jquery-3.2.1.js"
+  		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  		crossorigin="anonymous"></script>
+  	<script src="assets/javascript/circular-countdown.js"></script>
   	<script src="assets/javascript/app.js"></script>
+  	
+
 </head>
 <body>
 	<div class="quizContainer">
-         <h1>Weird Colorado Triva</h1>
-
+        <h1>Weird Colorado Trivia</h1>
+		<div id="time-left"></div>
+		
         <div class="question"></div>
         <ul class="choiceList"></ul>
         <div class="quizMessage"></div>
         <div class="result"></div>
         <div class="nextButton">Next Question</div>
         <br>
-    </div>
 
+    </div>
+		
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+      $('button').click(function() {
+
+          // Run the countdown
+          $('.timer').circularCountDown({
+              delayToFadeIn: 500,
+			  size: 250,
+			  fontColor: '#fff',
+			  colorCircle: 'white',
+			  background: '#2ECC71',
+              reverseLoading: false,
+              duration: {
+                  seconds: parseInt($('.delay').val())
+              },
+              beforeStart: function() {
+                  $('.launcher').hide();
+              },
+              end: function(countdown) {
+                  countdown.destroy();
+                  $('.launcher').show();
+                  //alert('terminé');
+              	}
+          	});
+      	});
+  	});
+	</script>
 </body>
 </html>
